@@ -1,0 +1,18 @@
+{
+  "name": "skyapp",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "team@skylinetech.ai",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "nodemonConfig": {
+    "ignore": ["app/*"],
+    "delay": "1500"
+  },  
+  "dependencies": {
+    "express": "^4.16.1",
+    "nodemon": "^1.14.11"
+  }
+}
