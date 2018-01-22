@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+// Import App Custom Styles
+//import AppStyles from './css/app.scss'
+//import './css/_logo.scss';
+
+import {
+  Framework7App, Statusbar, Panel, View, Navbar, Pages, Page, ContentBlock, ContentBlockTitle,
+  List, ListItem, Views, NavLeft, Link, NavCenter, NavRight,  Button, Popup,
+  LoginScreen, LoginScreenTitle, ListButton, ListLabel, FormLabel, FormInput, Subnavbar, ButtonsSegmented,
+  Tab, AccordionContent, onOpen, onOpened, onClose, onClosed
+} from 'framework7-react';
+import MainViews from './pages/MainViews';
 
 class App extends Component {
   isWellKnownUser(){
@@ -15,7 +26,10 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <Framework7App themeType="material" >
+      {
+        /*
+        <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
@@ -31,7 +45,12 @@ class App extends Component {
         </p>
         
           
-      </div>
+        </div>
+        */
+      }
+      <Statusbar />
+      <MainViews props/>
+      </Framework7App>
     );
   }
 }
