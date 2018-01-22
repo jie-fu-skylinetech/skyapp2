@@ -1,0 +1,16 @@
+.k-logo {
+    display: flex;
+    padding: 0 0 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .k-logo img {
+    width: 128px;
+    height: 54px;
+  }
+  .k-logo .k-register-link {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  

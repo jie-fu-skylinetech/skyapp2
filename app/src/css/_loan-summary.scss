@@ -1,0 +1,48 @@
+.k-loan-summary {
+    .k-header {
+        padding: 0 0 20px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .k-summary-text {
+        margin: 15px 0;
+        border-bottom: 1px solid #f0f0f0;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        .k-section {
+            width: 50%;
+
+            &.large {
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            label {
+                font-size: 12px;
+                color: #3c5a6e;
+            }
+
+            .k-number {
+                display: flex;
+
+                color: #809e5c;
+                font-size: 33px;
+
+                span {
+                    font-size: 22px;
+                    padding-top: 6px;
+                }
+
+                &.small {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    .k-help-text p {
+        font-size: 13px;
+    }
+}

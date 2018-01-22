@@ -1,0 +1,166 @@
+.k-form-element {
+    position: relative;
+    width: 100%;
+    margin: 10px 0 25px;
+  }
+  .k-form-element .k-label {
+    opacity: 0;
+    font-size: 13px;
+    position: absolute;
+    left: 5px;
+    top: -4px;
+    transition: all 0.3s cubic-bezier(0.29, 0.19, 0.405, 1);
+  }
+  .k-form-element .k-input-container {
+    position: relative;
+    height: 42px;
+    border-bottom: 1px solid #c9ccd1;
+    transition: border-color 0.3s cubic-bezier(0.29, 0.19, 0.405, 1);
+  }
+  .k-form-element .k-input-container.with-data {
+    border-bottom: 1px solid #3e4e61;
+  }
+  .k-form-element .k-input-container .k-input-select {
+    position: relative;
+    display: block;
+    padding: 13px 10px 0 0;
+    font-size: 16px;
+    border: none;
+    background: none;
+    width: 100%;
+    color: #3e4e61;
+  }
+  .k-form-element .k-input-container .k-input-text {
+    position: relative;
+    display: block;
+    padding: 13px 10px 0 5px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    width: 100%;
+    color: #3e4e61;
+  }
+  .k-form-element .k-input-container .k-placeholder {
+    position: absolute;
+    bottom: 10px;
+    left: 4px;
+    font-size: 16px;
+    color: #e2e0e0;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+  .k-form-element .k-help-text {
+    display: none;
+    margin-top: 10px;
+    padding: 0 5px;
+    font-size: 12px;
+  }
+  .k-form-element.focus .k-label {
+    opacity: 1;
+    top: -7px;
+    color: #e07828;
+  }
+  .k-form-element.focus .k-input-container {
+    border-bottom: 1px solid #e07828;
+  }
+  .k-form-element.focus .k-help-text {
+    display: block;
+  }
+  .k-form-element.focus .k-placeholder {
+    opacity: 0;
+    bottom: 0;
+  }
+  .k-form-element.with-data .k-label {
+    opacity: 1;
+    top: -7px;
+  }
+  .k-form-element.with-data .k-placeholder {
+    opacity: 0;
+    bottom: 0;
+  }
+  .k-form-element.k-select .k-label {
+    opacity: 1;
+    top: -7px;
+  }
+  .k-form-element.k-select .k-placeholder {
+    opacity: 0;
+    bottom: 0;
+  }
+  .k-form-element.k-select .k-input-container:after {
+    border-bottom: 2px solid #99a1aa;
+    border-left: 2px solid #99a1aa;
+    content: " ";
+    height: 8px;
+    position: absolute;
+    right: 5px;
+    top: 16px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 8px;
+  }
+  .k-agreement .k-label {
+    display: block;
+    position: relative;
+  }
+  .k-agreement .k-label .k-check-mark {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    margin-top: -12px;
+  }
+  .k-agreement .k-label .k-check-mark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .k-agreement .k-label input[type='checkbox'] {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+  }
+  .k-agreement .k-label input[type='checkbox']:checked ~ .k-check-mark {
+    background-color: #2196f3;
+  }
+  .k-agreement .k-label input[type='checkbox']:checked ~ .k-check-mark:after {
+    display: block;
+  }
+  .k-agreement .k-label:hover input[type='checkbox'] ~ .k-check-mark {
+    background-color: #ccc;
+  }
+  .k-agreement .k-label .k-rich-text {
+    margin: 0 10px 0 50px;
+    display: block;
+  }
+  .k-agreement .k-label .k-rich-text p {
+    font-size: 14px;
+  }
+  .k-btn {
+    border-radius: 5px;
+    display: block;
+    margin: 15px auto;
+    font-size: 16px;
+    width: 90%;
+    border-color: #29a0cc;
+    padding: 15px 35px;
+  }
+  .k-btn.k-btn-submit {
+    background: #29a0cc;
+    color: #fff;
+  }
+  .k-btn.k-btn-info {
+    background: #fff;
+    color: #29a0cc;
+  }
+  

@@ -1,0 +1,10 @@
+.navbar {
+    background: #3e4f62;
+  }
+  .navbar .navbar-inner .center {
+    font-weight: 400 !important;
+  }
+  .navbar .navbar-inner a, .navbar .navbar-inner .center {
+    color: #fff;
+  }
+  

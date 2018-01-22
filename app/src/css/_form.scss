@@ -1,0 +1,209 @@
+
+.k-form-element {
+    position: relative;
+    width: 100%;
+    margin: 10px 0 25px;
+
+    .k-label {
+        opacity: 0;
+        font-size: 13px;
+        position: absolute;
+        left: 5px;
+        top: -4px;
+        transition: all .3s cubic-bezier(.29,.19,.405,1);
+    }
+
+    .k-input-container {
+        position: relative;
+        height: 42px;
+        border-bottom: 1px solid #c9ccd1;
+        transition: border-color .3s cubic-bezier(.29,.19,.405,1);
+
+        &.with-data {
+            border-bottom: 1px solid #3e4e61;
+        }
+
+        .k-input-select {
+            position: relative;
+            display: block;
+            padding: 13px 10px 0 0;
+            font-size: 16px;
+            border: none;
+            background: none;
+            width: 100%;
+            color: #3e4e61;
+        }
+
+        .k-input-text {
+            position: relative;
+            display: block;
+            padding: 13px 10px 0 5px;
+            font-size: 16px;
+            border: none;
+            background: none;
+            width: 100%;
+            color: #3e4e61;
+        }
+
+        .k-placeholder {
+            position: absolute;
+            bottom: 10px;
+            left: 4px;
+            font-size: 16px;
+            color: #e2e0e0;
+            z-index: -1;
+
+            transition: all .3s ease;
+        }
+
+        
+    }
+
+    .k-help-text {
+        display: none;
+        margin-top: 10px;
+        padding: 0 5px;
+        font-size: 12px;
+
+    }
+
+    &.focus {
+        .k-label {
+            opacity: 1;
+            top: -7px;
+            color: #e07828;
+        }
+
+        .k-input-container {
+            border-bottom: 1px solid #e07828;
+        }
+
+        .k-help-text {
+            display: block;
+        }
+
+        .k-placeholder {
+            opacity: 0;
+            bottom: 0;
+        }
+    }
+
+    &.with-data {
+        .k-label {
+            opacity: 1;
+            top: -7px;
+        }
+
+        .k-placeholder {
+            opacity: 0;
+            bottom: 0;
+        }
+    }
+
+    &.k-select {
+        .k-label {
+            opacity: 1;
+            top: -7px;
+        }
+
+        .k-placeholder {
+            opacity: 0;
+            bottom: 0;
+        }
+
+        .k-input-container:after {
+            border-bottom: 2px solid #99a1aa;
+            border-left: 2px solid #99a1aa;
+            content: " ";
+            height: 8px;
+            position: absolute;
+            right: 5px;
+            top: 16px;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            width: 8px;
+        }
+    }
+}
+
+.k-agreement {
+
+    .k-label {
+        display: block;
+        position: relative;
+
+        .k-check-mark {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            margin-top: -12px;
+
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+
+        input[type='checkbox'] {
+            opacity: 0;
+            position: absolute;
+            cursor: pointer;
+
+            &:checked ~ .k-check-mark {
+                background-color: #2196F3;
+
+                &:after {
+                    display: block;
+                }
+            }
+        }
+
+        &:hover input[type='checkbox'] ~ .k-check-mark {
+            background-color: #ccc;
+        }
+
+        .k-rich-text {
+            margin: 0 10px 0 50px;
+            display: block;
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+    
+}
+
+.k-btn {
+    border-radius: 5px;
+    display: block;
+    margin: 15px auto;
+    font-size: 16px;
+    width: 90%;
+    border-color: #29a0cc;
+    padding: 15px 35px;
+
+    &.k-btn-submit {
+        background: #29a0cc; 
+        color: #fff;
+    }
+
+    &.k-btn-info {
+        background: #fff;
+        color: #29a0cc;
+    }
+}
