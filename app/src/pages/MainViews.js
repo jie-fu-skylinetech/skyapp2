@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import MyForm from '../components/MyForm';
 import {
   Framework7App, Statusbar, Panel, View, Navbar, Pages, Page, ContentBlock, ContentBlockTitle,
   List, ListItem, Views, NavLeft, Link, NavCenter, NavRight, Button, Popup,
@@ -12,7 +12,7 @@ import '../css/_global.css';
 import '../css/_page.css';
 import '../css/_navbar.css';
 import '../css/_form.css';
-const FormData = require('form-data');
+//const FormData = require('form-data');
 
 class MainViews extends View {
   constructor(props, context) {
@@ -22,18 +22,22 @@ class MainViews extends View {
   }
   handleSubmit(event) {
     event.preventDefault();
-    const data = new FormData(form);
+    let data = new FormData();
+    data.append("name", "value")
     const form = event.target;
     for (let element of form.elements) {
-      data.append(element.name, element.value)
-      console.log(element.name)
+      console.log(element)
+      if (element.name != '') {
+        data.append(element.name, element.value)
+        console.log(element.name)
+      }
     }
-    console.log(data)
+    console.log(JSON.stringify(data))
     fetch('/api/isWellKnownUser', {
       method: 'POST',
-      body: data
+      body: JSON.stringify(data)
     })
-      .then(function (response) {
+      .then(response => {
         return response.json()
       })
       .then(json => {
@@ -64,12 +68,17 @@ class MainViews extends View {
         Please enter the email address associated with your account.
         If you have not yet done so, you will be prompted to create a password.
             </p>
-            <form onSubmit={this.handleSubmit}>
-              <input name='xx' type='text' value='xxx'/>
-              <FormInput klabel="Email"></FormInput>
-              <button className="k-btn" >Continue</button>
-              <label>Server return: isWellKnownUser: {rv.isWellKnownUser}</label>
-            </form>
+            <MyForm/>
+            {
+              /*
+              <form onSubmit={this.handleSubmit}>
+                <input name='xx' type='text' value='xxx' />
+                <FormInput klabel="Email"></FormInput>
+                <button className="k-btn" >Continue</button>
+                <label>Server return: isWellKnownUser: {rv.isWellKnownUser}</label>
+              </form>
+              */
+            }
           </div>
         </View>
       </Views>

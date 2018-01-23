@@ -11,11 +11,16 @@ const HOST = 'localhost';
 // App
 const app = express();
 
+app.use(bodyParser());
+
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+//app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
-app.use(bodyParser.json())
+//app.use(bodyParser.json())
+
+app.use(express.json());       // to support JSON-encoded bodies
+//app.use(express.urlencoded()); // to support URL-encoded bodies
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'app/build')));
@@ -24,6 +29,7 @@ app.all('/api/isWellKnownUser', (req, res) => {
     console.log('requesting /api/isWellKnownUser')
     console.log(req.params)
     console.log(req.body)
+    //console.log(req)
     res.json({'isWellKnownUser':1})
 });
 
