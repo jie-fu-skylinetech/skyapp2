@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 class MyForm extends React.Component {
     constructor() {
@@ -8,19 +9,13 @@ class MyForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        const data = new FormData(event.target);
-        console.log(data.keys)
-        for (let entry of data.entries()){
-            console.log(entry)
+        let form = new FormData(event.target)
+        let data = {};
+        for (let entry of form.entries()){
+            data[entry[0]] = entry[1]
         }
-        // for (let datakey of data.keys()) {
-        //     console.log(datakey)
-        // }
-
-        fetch('/api/isWellKnownUser', {
-            method: 'POST',
-            body: data,
-        });
+        console.log(JSON.stringify(data))
+        axios.post('/api/isWellKnownUser', data);
     }
 
     render() {
