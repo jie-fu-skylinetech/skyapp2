@@ -15,7 +15,13 @@ class MyForm extends React.Component {
             data[entry[0]] = entry[1]
         }
         console.log(JSON.stringify(data))
-        axios.post('/api/isWellKnownUser', data);
+        
+        axios.post('/api/isWellKnownUser', JSON.stringify(data), {
+            headers:{
+                'Content-Type':'application/json'
+            }
+        });
+        // axios.post('/api/isWellKnownUser', data);
     }
 
     render() {
