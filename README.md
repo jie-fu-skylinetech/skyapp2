@@ -1,20 +1,11 @@
 <h3>
     Develop
-
 </h3>
+
 <ul>
-    <li>
-        npm run start
-
-    </li>
-    <li>
-        cd app
-
-    </li>
-    <li>
-        npm run start
-
-    </li>
+    <li>npm run start</li>
+    <li>cd app</li>
+    <li>npm run start</li>
 </ul>
 
 Install
