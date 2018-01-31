@@ -1,31 +1,74 @@
-Develop
-    npm run start
-    cd app
-    npm run start
+<h3>
+    Develop
+
+</h3>
+<ul>
+    <li>
+        npm run start
+
+    </li>
+    <li>
+        cd app
+
+    </li>
+    <li>
+        npm run start
+
+    </li>
+</ul>
 
 Install
-    npm install
-    cd app
-    npm install
+<ul>
+    <li>npm install</li>
+    <li>
+        cd app
+    </li>
+    <li>
+        npm install
+    </li>
+</ul>
+
+
+
 
 Build
-    cd app
-    npm run build
+<ul>
+    <li>cd app</li>
+    <li>npm run build</li>
 
-Run 
-    npm run start    
+</ul>
+
+
+
+Run
+<ul>
+    <li>npm run start </li>
+</ul>
+
 
 Docker build
-    docker build -t skylinetech/skyapp .
+<ul>
+    <li>docker build -t skylinetech/skyapp .</li>
+</ul>
+
 
 Docker image
-    docker image list
-    docker image rm xxxxxxxxxx
+<ul>
+    <li>docker image list</li>
+    <li>docker image rm xxxxxxxxxx</li>
+</ul>
+
+
 
 Docker run
-    docker run -p 8080:8080 skylinetech/skyapp        
+<ul>
+    <li>docker run -p 8080:8080 skylinetech/skyapp </li>
+    <li></li>
+</ul>
+
 
 Docker container
-    docker container list
-    docker container kill xxxxxxxxxx
-
+<ul>
+    <li>docker container list</li>
+    <li>docker container kill xxxxxxxxxx</li>
+</ul>
