@@ -1,56 +1,85 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-// Import App Custom Styles
-//import AppStyles from './css/app.scss'
-//import './css/_logo.scss';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import logo from "./logo.svg";
+import Home from "./components/Home";
 
+import ApplicantInfo from "./components/ApplicantInfo";
+
+import LoanOptions from "./components/LoanOptions";
+import "./App.css";
 import {
-  Framework7App, Statusbar, Panel, View, Navbar, Pages, Page, ContentBlock, ContentBlockTitle,
-  List, ListItem, Views, NavLeft, Link, NavCenter, NavRight,  Button, Popup,
-  LoginScreen, LoginScreenTitle, ListButton, ListLabel, FormLabel, FormInput, Subnavbar, ButtonsSegmented,
-  Tab, AccordionContent, onOpen, onOpened, onClose, onClosed
-} from 'framework7-react';
-import MainViews from './pages/MainViews';
+  Button,
+  Container,
+  Dropdown,
+  Header,
+  Icon,
+  Image,
+  Item,
+  Label,
+  Menu,
+  Segment,
+  Step,
+  Form,
+  Table
+} from "semantic-ui-react";
 
 class App extends Component {
-  isWellKnownUser(){
-    fetch('/api/isWellKnownUser')
-    .then(data=>{console.log(data) })
-    .catch(err=>{console.log(err)})
+  constructor(props, context) {
+    super(props, context);
+    this.handleForm = this.handleForm.bind(this);
+    this.setState = this.setState.bind(this);
   }
-  registerUnknownUser(){
-    fetch('/api/registerUnknownUser')
-    .then((data)=>{console.log(data) })
-    .catch((err)=>{console.log(err)})
+  // static contextTypes = {
+  //   router: React.PropTypes.object
+  // };
+  handleForm(event) {
+    Link.event.preventDefault();
+    let form = new FormData(event.target);
+    let data = {};
+    for (let pair of form.entries()) {
+      let key = pair[0];
+      let value = pair[1];
+      data[key] = value;
+    }
+    this.setState(data, () => {
+      console.log("this.state: " + this.state);
+    });
+    //this.context.router.push(event.target.action)
+    console.log("Current location:");
+    console.log(this.props.location);
   }
   render() {
     return (
-      <Framework7App themeType="material" >
-      {
-        /*
-        <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p className="App-intro">
-          <button onClick={this.isWellKnownUser}>Call isWellKnownUser</button>
-        </p>
-        <p className="App-intro">
-          <button onClick={this.registerUnknownUser}>Call registerUnknownUser</button>
-        </p>
-        
-          
+      <Router>
+        <div>
+          <Container text style={{ marginTop: "1em" }}>
+            <Container text>
+              <Header textAlign="center">Easy Loan</Header>
+              <Menu>
+                <Menu.Item as={Link} to="/">
+                  <img src="static/imgs/logo.jpg" />
+                </Menu.Item>
+                {/* <Dropdown icon="list layout" float="right">
+                  <Dropdown.Menu>
+                    <Dropdown.Item text="Applicant Info" />
+                    <Dropdown.Item text="Loan Options" />
+                  </Dropdown.Menu>
+                </Dropdown> */}
+
+                <Menu.Item as={Link} to="/applicantInfo">
+                  <Button>Application</Button>
+                </Menu.Item>
+                <Menu.Item as={Link} to="/loanOptions">
+                  <Button>Loan Options</Button>
+                </Menu.Item>
+              </Menu>
+              <Route path="/" exact component={Home} />
+              <Route path="/applicantInfo" exact component={ApplicantInfo} />
+              <Route path="/loanOptions" component={LoanOptions} />
+            </Container>
+          </Container>
         </div>
-        */
-      }
-      <Statusbar />
-      <MainViews props/>
-      </Framework7App>
+      </Router>
     );
   }
 }
