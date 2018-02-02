@@ -53,7 +53,6 @@ Docker image
 Docker run
 <ul>
     <li>docker run -p 8080:8080 skylinetech/skyapp </li>
-    <li></li>
 </ul>
 
 
